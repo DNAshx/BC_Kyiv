@@ -13,6 +13,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,8 +95,21 @@
     <Compile Include="Converters\SelectionToColorConverter.cs" />
     <Compile Include="Converters\SelectionToOpacityConverter.cs" />
     <Compile Include="Modules\ContentModule.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\DialogService.cs" />
+    <Compile Include="Service\Interfaces\IDialogService.cs" />
     <Compile Include="Views\CentresView.xaml.cs">
       <DependentUpon>CentresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactsView.xaml.cs">
+      <DependentUpon>ContactsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapCentresView.xaml.cs">
+      <DependentUpon>MapCentresView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
@@ -116,6 +130,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CentresView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapCentresView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +168,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +183,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BCKyivApp.Data\BCKyivApp.Data.csproj">
+      <Project>{6cd1d267-30c2-44ae-b277-7100e21b834a}</Project>
+      <Name>BCKyivApp.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BCKyiv_Core\BCKyivApp.Core.csproj">
       <Project>{ac852ed4-fe79-44fe-8b31-409b8cc29a5b}</Project>
       <Name>BCKyivApp.Core</Name>

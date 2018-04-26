@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BCKyivApp.Core.Models;
+using BCKyivApp.WPF.Resources;
+using Microsoft.Practices.Unity;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +26,18 @@ namespace BCKyivApp.WPF.Views
     {
         public NavigationView()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var rm = Microsoft.Practices.ServiceLocation.ServiceLocator.Current.GetInstance<IRegionManager>();
+            
+            if (rm != null)
+            {
+                var navItem = (NavigationLinkModel)((ListView)e.Source).SelectedItem;
+                rm.RequestNavigate(Strings.ContentRegion, navItem.ViewName);
+            }
         }
     }
 }

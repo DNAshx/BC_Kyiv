@@ -2,10 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.5</TargetFramework>
+	<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Prism.Core" Version="7.0.0.396" />
+    <PackageReference Include="Unity" Version="5.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BCKyivApp.Data\BCKyivApp.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <ListView Background="Transparent" ItemsSource="{Binding NavigationLinks}" BorderThickness="0" SelectedItem="{Binding CurrentNavigationLink, Mode=TwoWay}">
+        <ListView Name="NavListView" SelectionChanged="ListView_SelectionChanged" Background="Transparent" ItemsSource="{Binding NavigationLinks}" BorderThickness="0" SelectedItem="{Binding CurrentNavigationLink, Mode=TwoWay}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Background" Value="Transparent" />

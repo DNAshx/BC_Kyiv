@@ -24,11 +24,11 @@ namespace BCKyivApp.WPF
             //log4net.Config.XmlConfigurator.Configure();
             ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((viewType) =>
             {
-            var viewName = viewType.Name;
-            var viewModelAssemblyName = typeof(NavigationViewModel).Assembly.FullName;
-            var viewModelName = String.Format(CultureInfo.InvariantCulture, "BCKyivApp.Core.ViewModels.{0}Model, {1}", viewName, viewModelAssemblyName);
-            return Type.GetType(viewModelName);
-        });
+                var viewName = viewType.Name;
+                var viewModelAssemblyName = typeof(NavigationViewModel).Assembly.FullName;
+                var viewModelName = String.Format(CultureInfo.InvariantCulture, "BCKyivApp.Core.ViewModels.{0}Model, {1}", viewName, viewModelAssemblyName);
+                return Type.GetType(viewModelName);
+            });
 
             var bootstrapper = new Bootstrapper();
             bootstrapper.Run();

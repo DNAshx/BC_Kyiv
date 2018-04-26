@@ -30,7 +30,7 @@ namespace BCKyivApp.WPF.Adapters
         protected override IRegion CreateRegion()
         {
             var region = new SingleActiveRegion();
-            var welcomeView = new MapView();
+            var welcomeView = new MapCentresView();
             region.Add(welcomeView);
             region.Activate(welcomeView);
 

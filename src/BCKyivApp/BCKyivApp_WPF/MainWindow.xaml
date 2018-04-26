@@ -6,6 +6,7 @@
     xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
     xmlns:views="clr-namespace:BCKyivApp.WPF.Views"
     xmlns:controls1="clr-namespace:BCKyivApp.WPF.Controls"
+    xmlns:resources="clr-namespace:BCKyivApp.WPF.Resources"
     xmlns:prism="http://prismlibrary.com/"
     ResizeMode="CanMinimize"
     TitleCharacterCasing="Normal"

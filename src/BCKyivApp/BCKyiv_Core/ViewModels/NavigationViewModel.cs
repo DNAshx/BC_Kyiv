@@ -12,7 +12,6 @@ namespace BCKyivApp.Core.ViewModels
     public class NavigationViewModel : BindableBase, INavigationViewModel
     {
         
-
         private NavigationLinkModel _currentNavigationLink;
         public NavigationLinkModel CurrentNavigationLink
         {
@@ -25,16 +24,7 @@ namespace BCKyivApp.Core.ViewModels
             }
         }
 
-        private ObservableCollection<NavigationLinkModel> _navigationLinks;
-        public ObservableCollection<NavigationLinkModel> NavigationLinks
-        {
-            get { return _navigationLinks; }
-            set
-            {
-                _navigationLinks = value;
-                RaisePropertyChanged(nameof(NavigationLinks));
-            }
-        }
+        public ObservableCollection<NavigationLinkModel> NavigationLinks { get; set; }
 
         public NavigationViewModel()
         {
@@ -53,6 +43,13 @@ namespace BCKyivApp.Core.ViewModels
                     ViewName = "ContactsView",
                     IsSelected = false,
                     ImageSource = ""
+                },
+                new NavigationLinkModel
+                {
+                    Name = "Centres",
+                    ViewName = "CentresView",
+                    IsSelected = false,
+                    ImageSource = ""
                 }
             };
         }
@@ -65,8 +62,6 @@ namespace BCKyivApp.Core.ViewModels
             var navigationLinkModel = NavigationLinks.FirstOrDefault(model => model == obj);
             if (navigationLinkModel == null)
                 return;
-
-            
 
             navigationLinkModel.IsSelected = true;
         }
